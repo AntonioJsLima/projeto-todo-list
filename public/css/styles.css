@@ -1,1 +1,177 @@
 @import url('https://fonts.googleapis.com/css2?family=Ubuntu&display=swap');
+:root{
+    --bg-lighmode: #E3E7EE;
+    --bg-darckmode: #141F2F;
+
+    --item-lighmode: #F7F5F5;
+    --item-darckmode: #25273C;
+
+    --font-lighmode: #263956;
+    --font-darckmode: #B7B7B7;
+    
+    --check-lighmode: #D1D5DB;
+    --check-darckmode: #182233;
+}
+*{
+    font-family: Ubuntu,'Courier New', Courier, monospace;
+}
+body{
+    display: flex;
+    justify-content: space-around;
+    align-content: center;
+    background: url(/public/images/header.png);
+    background-position: top;
+    background-repeat: no-repeat;
+    background-color: var(--bg-lighmode);
+    color: white;
+    flex-grow: 0;
+    margin: 0;
+}
+.container{
+    margin-top: 250px;
+    width: 500px;
+}
+.darckmode-toggle{
+    width: 30px;
+    height: 30px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background: url(/public/images/moon.svg);
+    flex-grow: 0;
+}
+.head{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+}
+input[type=text]{
+    width: calc(100% - 20px);
+    padding: 20px 10px;
+    font-size: 22px;
+    border: none;    
+    margin-bottom: 40px ;
+    color: var(--item-lighmode);
+}
+.itens{
+    display: flex;
+    align-items: center;
+    background-color: var(--item-lighmode);
+    color: var(--font-lighmode);
+    padding: 10px;
+    height: 45px;
+    font-size: 22px;
+    border-bottom: 1px solid rgb(182, 182, 182);   
+}
+.item-checked{
+    text-decoration: line-through;
+}
+input[type=checkbox]{
+    width: 30px;
+    margin: 20px;
+    height: 30px;
+    border: 0;
+    position: relative;
+    cursor: pointer;
+}
+input[type=checkbox]:before{
+    content: "";
+    display: block;
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    top: 0;
+    left: 0;
+    background-color: var(--check-lighmode);
+}
+input[type=checkbox]:checked:before{
+    background-color: #0075FF;
+}
+input[type=checkbox]:checked:after{
+    content: "";
+    border:solid #fff;
+    border-width: 0 2px 2px 0;
+    transform: rotate(45deg);
+    display: block;
+    position: absolute;
+    top: 3px;
+    left: 9px;
+    width: 10px;
+    height: 15px;
+}
+.footer{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: var(--item-lighmode);
+    color: var(--font-lighmode);
+    padding: 20px 10px ;
+   
+    font-size: 14px;
+}
+.footer a{
+    text-decoration: none;
+    color: var(--font-lighmode);
+    margin: 0 5px;
+    font-size: 14px;
+}
+.footer div{
+    margin: 0 5px;
+}
+.footer a:hover{
+    color: #8ac2fe;
+}
+.footer a.active{
+    color: #116acc
+}
+.itens_footer{
+    font-size: 14px;
+    display: flex;
+    align-items: center;    
+    justify-content: center;
+}
+
+body.darkmode{
+    background-color: var(--bg-darckmode);
+
+}
+.darkmode .darckmode-toggle{
+    width: 25px;
+    height: 26px;
+    background: url(/public/images/sun.svg);
+}
+.darkmode input[type=text]{
+    background-color: var(--item-darckmode);
+}
+.darkmode .itens{
+    background-color: var(--item-darckmode);
+    color: var(--font-darckmode);
+}
+.darkmode input[type=checkbox]:before{
+    background-color: var(--check-darckmode);
+}
+input[type=checkbox]:checked:before{
+    background-color: #0075FF;
+}
+.darkmode .footer{
+    background-color: var(--item-darckmode);
+    color: var(--font-darckmode);
+}
+.darkmode .footer a{
+    color: var(--font-darckmode);
+}
+@media (max-width: 600px) {
+    .container{
+    margin-top: 150px;
+    width: 90%;
+    }
+    .footer a{
+        padding: 10px 0;
+        font-size: 9px;
+        gap: px;
+    }
+    .footer{
+        padding: 0px;
+        font-size: 9px;
+    }
+}
